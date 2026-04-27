@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-angola-red: #CE1126;
+  --color-angola-black: #050505;
+  --color-angola-yellow: #F9D616;
+  
+  --color-brand: var(--color-angola-red);
+  --color-brand-alt: var(--color-angola-black);
+  --color-brand-gold: var(--color-angola-yellow);
+}
+
+@layer base {
+  :root {
+    --bg: #FDFEFE;
+    --card: #FFFFFF;
+    --text: #050505;
+    --border: #F3F4F6;
+  }
+
+  .dark {
+    --bg: #050505;
+    --card: #121212;
+    --text: #FDFEFE;
+    --border: #1F1F1F;
+  }
+
+  body {
+    @apply bg-[var(--bg)] text-[var(--text)] font-sans transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-angola-red text-white px-6 py-3 rounded-2xl font-bold transition-all active:scale-95 flex items-center justify-center gap-2 shadow-lg shadow-angola-red/20;
+  }
+  
+  .card-premium {
+    @apply bg-[var(--card)] border border-[var(--border)] rounded-3xl p-4 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+  
+  .category-pill {
+    @apply px-4 py-2 rounded-full border border-[var(--border)] text-sm font-medium whitespace-nowrap transition-colors hover:border-angola-red hover:text-angola-red;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap');
+
